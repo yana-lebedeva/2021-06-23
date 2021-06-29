@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+h1 {
+  font-size: 100px;
+  font-weight: 100;
+  text-align: center;
+  color: rgba(175, 47, 47, 0.15);
+}
+
+.main {
+  position: relative;
+  background: #fff;
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%), 0 25px 50px 0 rgb(0 0 0 / 10%);
+  max-width: 980px;
+  margin: auto;
+}
+
+#form-add-task input {
+  padding: 16px 16px 16px 60px;
+  border: none;
+  background: rgba(0, 0, 0, 0.003);
+  box-shadow: inset 0 -2px 1px rgb(0 0 0 / 3%);
+  position: relative;
+  margin: 0;
+  width: 100%;
+  font-size: 24px;
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: 1.4em;
+}
+
+#form-add-task input:focus-visible {
+  outline: none;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid #e6e6e6;
+}
+
+
+.container {
+  display: none;
+}
+
+.container.has-tickets {
+  display: block;
+}
+
+.container::after {
+  content: '';
+  display: block;
+  height: 10px;
+  position: absolute;
+  z-index: -1;
+  width: 98%;
+  bottom: -10px;
+  left: 1%;
+  background: #fff;
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%), 0 25px 50px 0 rgb(0 0 0 / 10%);
+}
+
+.container::before {
+  content: '';
+  display: block;
+  height: 10px;
+  position: absolute;
+  z-index: -1;
+  width: 96%;
+  bottom: -20px;
+  left: 2%;
+  background: #fff;
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%), 0 25px 50px 0 rgb(0 0 0 / 10%);
+}
+
+.list .list-item {
+  position: relative;
+  font-size: 24px;
+  border-bottom: 1px solid #ededed;
+  padding: 15px 15px 15px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.list .list-item.completed {
+  color: #d9d9d9;
+  text-decoration: line-through;
+}
+
+.list .list-item:hover .btn-close {
+  display: block;
+}
+
+.list .list-item .btn-close {
+  color: #cc9a9a;
+  background: none;
+  border: none;
+  font-size: 30px;
+  line-height: 1;
+  position: absolute;
+  display: none;
+  right: 15px;
+  cursor: pointer;
+}
+
+.footer {
+  color: #777;
+  padding: 10px 15px;
+  text-align: center;
+  border-top: 1px solid #e6e6e6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
