@@ -36,12 +36,18 @@ export function markContainer() {
 };
 
 export function countTasks() {
-  const element = document.querySelector('#task-count');
+ let count = 0;
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    const value = localStorage.getItem(key);
+    const task = JSON.parse(value);
+    if (!task.done) {
+      count++;
+    }
+  }
+  document.getElementById('task-count').innerText = count;
+}
 
-  const values = Object.values(localStorage);
-
-  element.innerText = values.filter(item => !JSON.parse(item).done).length;
-};
 
 export function formSubmitHandler(event) {
   event.preventDefault();
